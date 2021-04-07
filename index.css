@@ -1,0 +1,36 @@
+#sF{
+    border: mediumblue thick solid;
+    background-color: white;
+    text-align: center;
+    font-size: xx-large;
+    height: 10%;
+    width: 50%;
+    margin: auto;
+    font-size: xx-large;
+    
+}
+
+#rF{
+    margin: auto;
+    font-size: xx-large;
+    background-color: white;
+    text-align: center;
+    border: thick solid blue;
+    height: 10%;
+    width: 50%;
+    font-size: xx-large;
+}
+
+.dv{
+    padding: 1em;
+}
+
+body{
+    background-color: #855E42;
+}
+
+.prs{
+    margin: auto;
+    text-justify: auto;
+    font-size: xxx-large;
+}

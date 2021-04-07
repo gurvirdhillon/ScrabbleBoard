@@ -1,0 +1,2 @@
+This file uses an alert which was presented on the screen as you accessed this html file.
+This document was used in order to allow for users to see what their score is.

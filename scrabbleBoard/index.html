@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>scrabble</title>
+    <script src="gridNtiles.mjs" type="module"></script>
+    <script src="draganddrop.mjs" type="module"></script>
+    <script src="gamecontroller.mjs" type="module"></script>
+    <link rel="stylesheet" href="scrabble.css">
+    <script src="dictionary.js"></script>
+    <script src="alphabet.mjs"></script>
+</head>
+<body>
+
+<header class="welcome">
+<h1>Welcome Players!</h1>
+<h2>Let the fun begin!</h2>
+</header>
+
+<aside id="greetUser">
+<output id="userGreet">waiting for users name...</output>
+</aside>
+
+<p></p>
+
+<p id="wordvalidity">Is the word valid?</p>
+<input id="word" placeholder="word">
+<p id="result">waiting for input...</p>
+<p id="space"></p>
+
+<main class="dropzone">
+<div id="container"></div>
+</main>
+
+<!-- the class dropzone is the parent for the container which stores all 225
+cells of divs inside and has been editted in 
+gridNtiles.mjs for you to examine! -->
+
+<p></p>
+<section id="sect1" class="dropzone">
+    <button id="nwLtrs">New Letters</button><p>
+</section>
+<p></p>
+
+<aside class="scoreWord">
+<h3>whats the score for my word?</h3>
+<input id="scoreCount">
+<p></p>
+<p id="resultScore">...nothing yet</p>
+<p></p>
+</aside>
+
+<aside id="profile">
+    <h4>Profile User</h4>
+    <p>first name:</p>
+    <input type="text" placeholder="type in your first name" class="userDetails">
+
+    <p>last name:</p>
+    <input type="text" placeholder="type in your last name" class="userDetails">
+
+    <p>username:</p>
+    <input type="text" placeholder="create a username!" id="un" class="userDetails">
+    <!-- un stands for username -->
+</aside>
+<footer>
+<p></p>
+<nav class="layout"><a href="/scrabble/main.html" target="_blank">Back to main page?</a></nav>
+<p></p>
+<nav class="layout"><a href="/scrabble/rules/rules.html" target="_blank">Read the rules</a></nav>
+<p></p>
+</footer>
+</body>

@@ -1,0 +1,12 @@
+#rule{
+    font-family: monospace;
+    width: 100vh;
+    height: 100vh;
+    white-space: pre;
+}
+
+body{
+    background-color:  #caa472;
+
+}
+
