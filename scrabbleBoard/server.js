@@ -9,3 +9,4 @@ app.listen(port, function () {
 });
 
 app.use(express.static('/scrabble/rules/rules.html'));
+app.use(express.static('scrabble/functionality/score.html'));

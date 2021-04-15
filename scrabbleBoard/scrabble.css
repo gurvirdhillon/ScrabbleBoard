@@ -7,6 +7,13 @@
     display: inline;
     color: white;
 }
+
+#word{
+    border: black thin solid;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
 #greetUser{
     padding-left: 80vw;
     font-size: 2em;
@@ -29,12 +36,52 @@
     display: grid;
     grid-gap: 0em;
     grid-template-columns: repeat(15, 2em);
-    border: thin black solid;
+    width: 36em;
+    margin: auto;
 }
 
-#nwLtrs{
-    padding-right: 3.5em;
+#playButton{
+    background-color: cadetblue;
+    border: black thin solid;
+    border-radius: 1em;
+    width: 3em;
+    height: 3em;
+    text-align: center;
 }
+
+#stopButton{
+    background-color: cadetblue;
+    border: black thin solid;
+    border-radius: 1em;
+    width: 3em;
+    height: 3em;
+    text-align: center;
+}
+
+#hintHolder{
+    border: darkblue thick solid;
+    width: 20em;
+    margin: auto;
+}
+
+article{
+    padding: 0.5em;
+    width: 15em;
+    margin: auto;
+}
+
+#sect1>div{
+    border: thin black solid;
+    margin: 0 0 0 1em;
+    /* position: absolute; */
+    position: relative;
+    background-color: #CC9966;
+    height: 2em;
+    width: 2em;
+    text-align: center;
+}
+
+
 
 .divContent{
     border: thin red solid;
@@ -64,14 +111,21 @@ body{
 .boardp{
     background-color: #CC9966;
     position: absolute;
-    right: 1.5em;
+    /* right: 1.5em; */
     padding-right: 1em;
-    position: relative;
     padding-bottom: 1em;
     padding-left: 0.2em;
     display: inline;
     border: black thin solid;
     font-size: 1em;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.dropBoardp{
+    background-color: #CC9966 !important;
+    color: black !important;
 }
 
 .cell {
@@ -79,32 +133,25 @@ body{
     min-width: 2em;
     min-height: 2em;
     box-sizing: border-box;
-    /* padding-top: 1em; */
+    position: relative;
     /* display: inline-block; */
     background-color: whitesmoke;
   }
 
-div{
-/* display: grid; */
-grid-gap: 0em;
-}
-
-.boardp > #t0, #t7, #t14, #t105, #t119, #t210, #t217, #t224, #t3, #t11, #t36, #t38, #t45, 
+  /* this gives the coloured tiles such as 3LS 2WS special functionality. */
+.boardp> #t0, #t7, #t14, #t105, #t119, #t210, #t217, #t224, #t3, #t11, #t36, #t38, #t45, 
 #t52, #t59, #t92, #t96, #t98, #t102, #t108, #t116, #t122, #t126, #t128 ,#t132, #t165, 
 #t172, #t179, #t186, #t188, #t16, #t28, #t32, #t42, #t48, #t56, #t64, #t70, #t154, #t160, 
 #t168, #t176, #t182, #t192, #t196, #t208, #t20, #t24, #t76 ,#t80, #t84, #t88, #t136, 
 #t140, #t144, #t148, #t200, #t204 {
-    /* position: absolute;  */
-    flex-direction: row;
-    right: 1.3em;
-    left: 0em;
-    top: 0em;
-    bottom: 0em;
+    display: block;
+    /* right: 1.3em; */
+    /* left: 0em; */
+    /* top: 0em; */
+    /* bottom: 0em; */
     position: relative;
     box-sizing: border-box;
-    padding-right: 2em;
-    padding-bottom: 0.5em;
-    display: inline;
+    /* display: inline; */
 }
 
 section{
@@ -115,19 +162,51 @@ section{
 .boardp>div{
     position: absolute;
     /* left: 0.5em; */
-    top: 0;
+    top: 1em;
     left: 0;
     right: 0;
 }
 
 div>div{
     position: relative;
+    background-color: #CC9966;
+    flex-direction: row;
+    right: 0;
+    left: 0;
+    top: 0em;
+    bottom: 0;
+    display: grid;
+}
+div > .boardp{
+    top: -1em;
+}
+#container .boardp{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 
-#scoreCount{
+.scoreWord{
+    background-color: #7dc734;
+    border: thin solid black;
+    border-radius: 1em;
+    width: 20em;
+    margin: auto;
+}
+
+#nwLtrs{
+    padding-right: 4em;
+}
+
+#RememberMyWord{
     border: blueviolet thin solid;
     border-radius: 1em;
     padding: 0.4em;
+}
+#list{
+    background-color: white;
+    color: black;
 }
 
 #resultScore{
@@ -191,6 +270,8 @@ User profile
     border: black thin solid;
     background-color: grey;
     padding: 1em;
+    width: 15em;
+    margin: auto;
 }
 
 .userDetails{
@@ -198,7 +279,8 @@ User profile
     border: blue 0.1em solid;
 }
 
+/* div > #t0, #t7, #t14, #t105,#t119, #t210, #t217, #t224, #t16, #t28, #t32, #t42, #t48, #t56, #t64, #t70, #t154, #t160, #t168, #t176, #t182, #t192, #t196, #t208, #t20, #t24, #t76 ,#t80, #t84, #t88, #t136, #t140, #t144, #t148, #t200, #t204, #t3, #t11, #t36, #t38, #t45, #t52, #t59, #t92, #t96, #t98, #t102, #t108, #t116, #t122, #t126, #t128 ,#t132, #t165, #t172, #t179, #t186, #t188{
+    position: relative;
 
-#t1, #t2, #t4, #t5, #t6, #t8, #t9, #t10, #t12, #t13, #t15, #t17, #t19, #t18, #t18, #t21, #t22, #t23, #t25, #t26, #t27, #t29, #t30, #t31, #t33, #t34, #t35, #t37, #t39, #t40, #t41, #t43, #t44, #t46, #t47, #t49, #t50, #t51, #t53, #t54, #t55, #t57, #t58, #t60, #t61, #t62, #t63, #t65, #t66, #t67, #t68, #t69, #t71, #t72, #t73, #t74, #t75, #t77, #t78, #t79, #t81, #t82, #t83, #t85, #t86, #t87, #t89, #t90, #t91, #t93, #t94, #t95, #t97, #t99, #t100, #t101, #t103, #t104, #t106, #t107, #t109, #t110, #t111, #t113, #t114, #t115, #t117, #t118, #t120, #t121, #t123, #t124, #t125, #t127, #t129, #t130, #t131, #t133, #t134, #t135, #t137, #t138, #t139, #t141, #t142, #t143, #t145, #t146, #t147, #t149, #t150, #t151, #t152, #t153, #t155, #t156, #t157, #t158, #t159, #t161, #t162, #t163, #t164, #t166, #t167, #t169, #t170, #t171, #t173, #t174, #t175, #t177, #t178, #t180, #t181, #t183, #t184, #t185, #t187, #t189, #t190, #t191, #t193, #t194, #t195, #t197, #t198, #t199, #t201, #t202, #t203, #t205, #t206, #t207, #t209, #t211, #t212, #t213, #t214, #t215, #t216, #t218, #t219, #t220, #t221, #t222, #t223{
-    color: whitesmoke;
 }
+ */

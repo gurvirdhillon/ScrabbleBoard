@@ -2,12 +2,15 @@
 <head>
     <meta charset="UTF-8">
     <title>scrabble</title>
+    <link rel="icon/png" href="">
     <script src="gridNtiles.mjs" type="module"></script>
     <script src="draganddrop.mjs" type="module"></script>
     <script src="gamecontroller.mjs" type="module"></script>
     <link rel="stylesheet" href="scrabble.css">
     <script src="dictionary.js"></script>
     <script src="alphabet.mjs"></script>
+    <script src="music.mjs" type="module"></script>
+    <script src="layout.mjs" type="module"></script>
 </head>
 <body>
 
@@ -16,37 +19,59 @@
 <h2>Let the fun begin!</h2>
 </header>
 
+<details>
+zoom in/out<input type="range" id="changeLayout">
+
+</details>
 <aside id="greetUser">
 <output id="userGreet">waiting for users name...</output>
 </aside>
 
 <p></p>
-
+<article>
 <p id="wordvalidity">Is the word valid?</p>
-<input id="word" placeholder="word">
+<input id="word" placeholder="input a word">
 <p id="result">waiting for input...</p>
-<p id="space"></p>
+</article>
 
 <main class="dropzone">
 <div id="container"></div>
 </main>
 
 <!-- the class dropzone is the parent for the container which stores all 225
-cells of divs inside and has been editted in 
+cells of divs inside the container and has been editted in 
 gridNtiles.mjs for you to examine! -->
 
 <p></p>
 <section id="sect1" class="dropzone">
     <button id="nwLtrs">New Letters</button><p>
+        <p></p>
+<button id="playButton">▶</button>
+<p></p>
+<button id="stopButton">||</button>
+<p></p>
 </section>
+<p></p>
+<div id="hintHolder">
+<article>
+<button id="hintActive">activate hint</button>
+<p></p>
+<output id="hintOutPut">...</output>
+</article>
+</div>
 <p></p>
 
 <aside class="scoreWord">
 <h3>whats the score for my word?</h3>
-<input id="scoreCount">
+<button id="btn" onclick="promptTheScore">click me to calculate my word</button>
 <p></p>
-<p id="resultScore">...nothing yet</p>
+
+<h4>Remember my word</h4>
+<input id="RememberMyWord" type="text" placeholder="words used">
+<button type="submit" id="submitRemember">submit</button>
 <p></p>
+<ul id="list">
+</ul>
 </aside>
 
 <aside id="profile">
@@ -60,6 +85,8 @@ gridNtiles.mjs for you to examine! -->
     <p>username:</p>
     <input type="text" placeholder="create a username!" id="un" class="userDetails">
     <!-- un stands for username -->
+    <p>date of birth</p>
+    <input type="date">
 </aside>
 <footer>
 <p></p>

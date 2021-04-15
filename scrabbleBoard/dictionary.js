@@ -39,5 +39,7 @@ function pageLoaded() {
 window.addEventListener('load', pageLoaded);
 
 /* code extracted from Boakes, R. (2021). portsoc/fetch101.
-  Retrieved from https://github.com/portsoc/fetch101/tree/master/examples/7_interaction
-  */
+
+Retrieved from https://github.com/portsoc/fetch101/tree/master/examples/7_interaction
+
+*/

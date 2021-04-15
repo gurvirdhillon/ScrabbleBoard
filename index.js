@@ -39,15 +39,3 @@ function ruleCommand() {
   document.body.append(p);
 }
 ruleCommand();
-
-function ScoreCommand() {
-  // this hyperlink checks whether the score has been added.
-  const scrI = document.createElement('a');
-  scrI.classList = 'prs';
-  scrI.textContent = 'CalculateMyMove';
-  scrI.href = 'functionality/score.html';
-  scrI.target = '_blank';
-  document.body.append(scrI);
-  // scrI is short for score In-check. This file allows for the user to check their score count when typing in a word.
-}
-ScoreCommand();

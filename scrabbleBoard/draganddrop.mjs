@@ -10,6 +10,9 @@ export function dragHandlerOver(e) {
 export function dropHandler(e) {
   const data = e.dataTransfer.getData('text/plain');
   const dragged = document.getElementById(data);
+  e.target.classList.add('dropBoardp');
+  e.target.textContent = dragged.textContent;
+  e.target(dragged.remove());
   e.target.append(dragged);
 }
 
@@ -18,6 +21,7 @@ export function prepareListeners() {
   for (const dropzone of dropzones) {
     dropzone.addEventListener('dragover', dragHandlerOver);
     dropzone.addEventListener('drop', dropHandler);
+
 
     const divs = document.querySelectorAll('div');
     for (const div of divs) {
@@ -29,8 +33,9 @@ export function prepareListeners() {
 window.addEventListener('load', prepareListeners);
 
 /*
-Boakes, R. portsoc/ws_drag. Retrieved from 
+Boakes, R. portsoc/ws_drag. Retrieved from
 https://github.com/portsoc/ws_drag/blob/master/examples/drag-drop-move/script.js
+edited to own needs.
 */
 
 console.log('drag and drop works!');
