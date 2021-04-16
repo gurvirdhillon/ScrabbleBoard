@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="scrabble.css">
     <script src="dictionary.js"></script>
     <script src="alphabet.mjs"></script>
+    <script src="rules.js"></script>
     <script src="music.mjs" type="module"></script>
     <script src="layout.mjs" type="module"></script>
 </head>
-<body>
+<body id="page">
 
 <header class="welcome">
 <h1>Welcome Players!</h1>
@@ -20,9 +21,20 @@
 </header>
 
 <details>
-zoom in/out<input type="range" id="changeLayout">
-
+zoom in/out<input type="range" id="changeLayout" min="0.25" max="3">
+<p></p>
+<h3>Edit Colour of the background:<span id="colourOutput"></span></h3>
+<p>red:</p><input type="range" id="red" value="0" min="0" max="255">
+<p>green:</p><input type="range" id="green" value="140" min="0" max="255">
+<p>blue:</p><input type="range" id="blue" value="170" min="0" max="255">
+<p></p>
 </details>
+
+<p></p>
+<button id="rulesGetter">Read the rules</button>
+<p id="rule"></p>
+<p></p>
+
 <aside id="greetUser">
 <output id="userGreet">waiting for users name...</output>
 </aside>

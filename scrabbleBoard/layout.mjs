@@ -1,39 +1,27 @@
-const zoomStrength = document.querySelector('#changeLayout');
-zoomStrength.addEventListener('range', startScroll);
+// the zoom functionality
+const addRange = document.querySelector('#changeLayout');
+const page = document.querySelector('#page');
 
-let scrolling;
-
-function startScroll(dir) {
-  if (scrolling) {
-    clearInterval(scrolling);
-    scrolling = null;
-  } if (dir !== 0) {
-    scrolling = window.setInterval(
-      () => {
-        window.scrollBy({ top: dir, behavior: 'smooth' });
-      },
-      1000,
-    );
-  }
+function addZoomInQuality() {
+  page.style.zoom = this.value;
 }
 
-function controlScroll(e) {
-  if (e.key === 'ArrowDown') startScroll(100);
-  if (e.key === 'ArrowUp') startScroll(100);
-  if (e.key === 'Space') startScroll(0);
-}
-controlScroll();
+addRange.addEventListener('change', addZoomInQuality);
 
-function handleDrop(e) {
-  e.preventDefault();
-}
+//  how i added the colour hidden within the detail
 
-function handleDragOver(e) {
-  e.preventDefault();
+function changeColour() {
+  const red = document.querySelector('#red').value;
+  const green = document.querySelector('#green').value;
+  const blue = document.querySelector('#blue').value;
+  const colour = 'rgb(' + red + ',' + green + ',' + blue + ')';
+  document.body.style.backgroundColor = colour;
 }
+document.querySelector('#red').addEventListener('input', changeColour);
+document.querySelector('#green').addEventListener('input', changeColour);
+document.querySelector('#blue').addEventListener('input', changeColour);
 
-function init() {
-  window.addEventListener('dragover', handleDragOver);
-  window.addEventListener('drop', handleDrop);
-}
-init();
+/*
+Philips, R. (2019). JavaScript Function to Change Background Color with Input Range Sliders [Video].
+Retrieved from https://www.youtube.com/watch?v=4NuwZaVv0FY
+*/

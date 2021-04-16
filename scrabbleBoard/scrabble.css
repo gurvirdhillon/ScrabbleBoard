@@ -1,6 +1,15 @@
+#page{
+    font-size: larger;
+}
+
 .welcome{
     background-color: #B22222;
     color: #caa472;
+}
+
+details{
+    background-color: grey;
+    width: 20em;
 }
 
 .layout{
@@ -13,6 +22,13 @@
     border-radius: 1em;
     padding: 0.5em;
 }
+
+#rule{
+    font-family: monospace;
+    background-color: #caa472;
+    white-space: pre;
+}
+
 
 #greetUser{
     padding-left: 80vw;
@@ -73,7 +89,6 @@ article{
 #sect1>div{
     border: thin black solid;
     margin: 0 0 0 1em;
-    /* position: absolute; */
     position: relative;
     background-color: #CC9966;
     height: 2em;
@@ -100,7 +115,6 @@ article{
 body{
     width: 100vw;
     height: 100vh;
-    /* background-color: seagreen; */
     background-color: mediumseagreen;
 }
 
@@ -111,7 +125,6 @@ body{
 .boardp{
     background-color: #CC9966;
     position: absolute;
-    /* right: 1.5em; */
     padding-right: 1em;
     padding-bottom: 1em;
     padding-left: 0.2em;
@@ -145,13 +158,8 @@ body{
 #t168, #t176, #t182, #t192, #t196, #t208, #t20, #t24, #t76 ,#t80, #t84, #t88, #t136, 
 #t140, #t144, #t148, #t200, #t204 {
     display: block;
-    /* right: 1.3em; */
-    /* left: 0em; */
-    /* top: 0em; */
-    /* bottom: 0em; */
     position: relative;
     box-sizing: border-box;
-    /* display: inline; */
 }
 
 section{
@@ -161,7 +169,6 @@ section{
 
 .boardp>div{
     position: absolute;
-    /* left: 0.5em; */
     top: 1em;
     left: 0;
     right: 0;
@@ -227,7 +234,6 @@ main>div{
 main > .cell .boardp{
     position: absolute;
     top: 0rem;
-    /* left: 1rem; */
 }
 
 footer{
@@ -278,9 +284,3 @@ User profile
     padding-right: 2em;
     border: blue 0.1em solid;
 }
-
-/* div > #t0, #t7, #t14, #t105,#t119, #t210, #t217, #t224, #t16, #t28, #t32, #t42, #t48, #t56, #t64, #t70, #t154, #t160, #t168, #t176, #t182, #t192, #t196, #t208, #t20, #t24, #t76 ,#t80, #t84, #t88, #t136, #t140, #t144, #t148, #t200, #t204, #t3, #t11, #t36, #t38, #t45, #t52, #t59, #t92, #t96, #t98, #t102, #t108, #t116, #t122, #t126, #t128 ,#t132, #t165, #t172, #t179, #t186, #t188{
-    position: relative;
-
-}
- */
