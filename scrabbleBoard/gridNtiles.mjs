@@ -5,6 +5,7 @@
 // drag and drop import.
 import * as draganddrop from './draganddrop.mjs';
 import * as letters from './alphabet.mjs';
+// import makeTileLetters as randomGenerator from './alphabet.mjs';
 
 const container = document.getElementById('container');
 
@@ -22,21 +23,37 @@ const buttonElem = document.querySelector('#nwLtrs');
 buttonElem.addEventListener('click', makeAutoTiles);
 
 // this will create new letters which will be given when the users tile rac is empty.
+function getNewLetters() {
+  document.querySelector('#nwLtrs').addEventListener('click', makeAutoTiles);
+}
+getNewLetters();
 
+const tileNumber = 0;
 function makeAutoTiles() {
-  const rackTiles = document.querySelectorAll('.boardp');
-  for (let i = 0; i < 7; i++) {
-    for (const rackTile of rackTiles) {
-      if (rackTiles.children === 0) {
-        const divCreator = document.createElement('div');
-        divCreator.classList.add('boardp');
-        divCreator.draggable = true;
-        // newLtr++;
-        const tileLtr = document.createTextNode(`${i}`);
-        tileLtr.appendChild(rackTile);
-      }
+  const rackTiles = document.querySelectorAll('#sect1');
+  for (const rackTile of rackTiles) {
+    if (rackTile.children.length < 7) {
+      const divCreator = document.createElement('div');
+      divCreator.classList.add('boardp');
+      tileNumber++;
+      divCreator.id = `letter${tileNumber}`;
+      divCreator.draggable = true;
+      const nodeText = document.createTextNode(letters.makeTileLetters());
+      rackTile.appendChild(nodeText);
     }
   }
+  // for (let i = 0; i < 7; i++) {
+  //   for (const rackTile of rackTiles) {
+  //     if (rackTiles.children === 0) {
+  //       const divCreator = document.createElement('div');
+  //       divCreator.classList.add('boardp');
+  //       divCreator.draggable = true;
+  //       // newLtr++;
+  //       const tileLtr = document.createTextNode(`${i}`);
+  //       tileLtr.appendChild(rackTile);
+  //     }
+  //   }
+  // }
 }
 makeAutoTiles();
 

@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <title>scrabble</title>
     <link rel="icon/png" href="">
+    <script src="music.mjs" type="module"></script>
     <script src="gridNtiles.mjs" type="module"></script>
     <script src="draganddrop.mjs" type="module"></script>
     <script src="gamecontroller.mjs" type="module"></script>
@@ -10,7 +11,6 @@
     <script src="dictionary.js"></script>
     <script src="alphabet.mjs"></script>
     <script src="rules.js"></script>
-    <script src="music.mjs" type="module"></script>
     <script src="layout.mjs" type="module"></script>
 </head>
 <body id="page">
@@ -58,7 +58,9 @@ gridNtiles.mjs for you to examine! -->
 <section id="sect1" class="dropzone">
     <button id="nwLtrs">New Letters</button><p>
         <p></p>
-<button id="playButton">▶</button>
+<input type="button" value="▶" id="playMe">
+<audio id="audio" src="Revolution - AShamaluevMusic.mp3"></audio>
+<!-- <button id="playButton">▶</button> -->
 <p></p>
 <button id="stopButton">||</button>
 <p></p>

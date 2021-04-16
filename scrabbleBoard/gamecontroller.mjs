@@ -86,7 +86,7 @@ alertMe.addEventListener('click', promptTheScore);
 
 code inspired by Scholz, N., Gao, V., & Sauyet, S. (2021). Calculating Score for Scrabble-Java Script. Retrieved 11 April 2021,
 from https://stackoverflow.com/questions/58241255/calculating-score-for-scrabble-java-script
-
+edited code according to own needs.
 */
 
 // hint button shown below
