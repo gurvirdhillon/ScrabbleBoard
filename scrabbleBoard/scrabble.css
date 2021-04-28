@@ -122,6 +122,12 @@ body{
     padding: 1em;
 }
 
+.tileHolder{
+    background-color: blanchedalmond;
+    padding: 1em;
+    border: black thin solid;
+}
+
 .boardp{
     background-color: #CC9966;
     position: absolute;
@@ -237,6 +243,7 @@ main > .cell .boardp{
 }
 
 footer{
+    color: white;
     padding: 1em;
     text-align: center;
     background-color: black;
@@ -282,5 +289,6 @@ User profile
 
 .userDetails{
     padding-right: 2em;
+    padding-bottom: 1em;
     border: blue 0.1em solid;
 }

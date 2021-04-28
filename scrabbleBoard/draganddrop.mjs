@@ -8,12 +8,24 @@ export function dragHandlerOver(e) {
 }
 
 export function dropHandler(e) {
-  const data = e.dataTransfer.getData('text/plain');
-  const dragged = document.getElementById(data);
-  e.target.classList.add('dropBoardp');
-  e.target.textContent = dragged.textContent;
-  e.target(dragged.remove());
-  e.target.append(dragged);
+  console.log(e.target);
+  if (e.target.classList.contains('cell')) {
+    console.log(e.dataTransfer);
+    const data = e.dataTransfer.getData('text/plain');
+    console.log('test1');
+    console.log(data);
+    console.log('test1');
+    const dragged = document.getElementById(data);
+    console.log('test2');
+    console.log(dragged);
+    console.log('test2');
+    e.target.classList.add('dropBoardp');
+    e.target.textContent = dragged.textContent;
+    e.target(dragged.remove());
+    e.target.append(dragged);
+  } else {
+    alert('unable to drop here :(');
+  }
 }
 
 export function prepareListeners() {

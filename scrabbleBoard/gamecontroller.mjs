@@ -19,21 +19,21 @@ un.addEventListener('input', userNameGreetings);
 
 // down below i have set up a user1 and given a 'key'.
 
-localStorage.setItem('un', 'user1');
-console.log(localStorage.getItem('un'));
-console.log(localStorage.length);
+// localStorage.setItem('un', 'user1');
+// console.log(localStorage.getItem('un'));
+// console.log(localStorage.length);
 
-const userName = {
-  fn: 'user',
-  sn: '1',
-  email: 'user1@user1.co.uk',
-};
+// const userName = {
+//   fn: 'user',
+//   sn: '1',
+//   email: 'user1@user1.co.uk',
+// };
 
-localStorage.lec = JSON.stringify(userName);
-const xyz = JSON.parse(localStorage.lec);
-console.log(xyz.fn);
-console.log(xyz.sn);
-console.log(xyz.email);
+// localStorage.lec = JSON.stringify(userName);
+// const xyz = JSON.parse(localStorage.lec);
+// console.log(xyz.fn);
+// console.log(xyz.sn);
+// console.log(xyz.email);
 
 /* down below is the method i used for the calculate button and it consists of an array with the value of the numbers
 and i have connected it to an event listener that listens for a click which triggers an alert which prompts the user
@@ -84,12 +84,12 @@ alertMe.addEventListener('click', promptTheScore);
 
 /*
 
-code inspired by Scholz, N., Gao, V., & Sauyet, S. (2021). Calculating Score for Scrabble-Java Script. Retrieved 11 April 2021,
+code inspired by Scholz, N., Gao, V., & Sauyet, S. (2021). Calculating Score for Scrabble-Java Script.
 from https://stackoverflow.com/questions/58241255/calculating-score-for-scrabble-java-script
 edited code according to own needs.
 */
 
-// hint button shown below
+// hint button shown below which gives generic hints to its users when playing the game.
 
 const targetHintButton = document.querySelector('#hintActive');
 targetHintButton.addEventListener('click', getRandomNumberHint);
@@ -136,3 +136,31 @@ function addList() {
   NodeOfThings.appendChild(txtNode);
   NodeList.appendChild(NodeOfThings);
 }
+
+// submitting profile details to local storage.
+
+const playWord = document.querySelector('#playWord');
+playWord.addEventListener('click', submitTheWord);
+
+function submitTheWord() {
+  // console.log('word submitted');
+}
+
+const tilePlacing = [
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+];
+tilePlacing();

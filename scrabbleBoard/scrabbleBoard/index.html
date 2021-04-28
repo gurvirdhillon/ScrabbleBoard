@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>scrabble</title>
+    <link rel="icon" href="https://icon2.cleanpng.com/20180323/rgq/kisspng-words-of-gold-scrabble-letter-distributions-scrabb-letter-tiles-cliparts-5ab59770b48bd7.2256561315218502247395.jpg">
+    <script src="music.mjs" type="module"></script>
+    <script src="gridNtiles.mjs" type="module"></script>
+    <script src="draganddrop.mjs" type="module"></script>
+    <script src="gamecontroller.mjs" type="module"></script>
+    <link rel="stylesheet" href="scrabble.css">
+    <script src="dictionary.js"></script>
+    <script src="alphabet.mjs"></script>
+    <script src="rules.js"></script>
+    <script src="layout.mjs" type="module"></script>
+</head>
+<body id="page">
+
+<header class="welcome">
+<h1>Welcome Players!</h1>
+<h2>Let the fun begin!</h2>
+</header>
+
+<details>
+    <h2>settings bar:</h2>
+    <img src="data:image/png;base64,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" width="50vw" height="50vh" draggable="false">
+zoom in/out<input type="range" id="changeLayout" min="0.50" max="2">
+<p></p>
+<h3>Edit Colour of the background:<span id="colourOutput"></span></h3>
+<p>red:</p><input type="range" id="red" value="0" min="0" max="255">
+<p>green:</p><input type="range" id="green" value="140" min="0" max="255">
+<p>blue:</p><input type="range" id="blue" value="170" min="0" max="255">
+<p></p>
+<button id="rulesGetter">Read the rules</button>
+</details>
+
+<p></p>
+<p id="rule"></p>
+<p></p>
+
+<aside id="greetUser">
+<output id="userGreet">waiting for users name...</output>
+</aside>
+
+<p></p>
+<article>
+<p id="wordvalidity">Is the word valid?</p>
+<input id="word" placeholder="input a word">
+<p id="result">waiting for input...</p>
+</article>
+
+<main class="dropzone">
+<div id="container"></div>
+</main>
+
+<!-- the class dropzone is the parent for the container which stores all 225
+cells of divs inside the container and has been editted in 
+gridNtiles.mjs for you to examine! -->
+
+<p></p>
+<section id="sect1" class="dropzone">
+    <button id="nwLtrs">New Letters</button><p></p>
+    
+        <p></p>
+<input type="button" value="▶" id="playMe">
+<audio id="audio" src="Revolution - AShamaluevMusic.mp3"></audio>
+<p></p>
+<button id="stopButton">||</button>
+<p></p>
+</section>
+<p></p>
+<div id="hintHolder">
+<article>
+<button id="hintActive">activate hint</button>
+<p></p>
+<output id="hintOutPut">...</output>
+</article>
+</div>
+<p></p>
+
+<aside class="scoreWord">
+<h3>whats the score for my word?</h3>
+<button id="btn" onclick="promptTheScore">click me to calculate my word</button>
+<p></p>
+
+<h4>Remember my word</h4>
+<input id="RememberMyWord" type="text" placeholder="words used">
+<button type="submit" id="submitRemember">submit</button>
+<p></p>
+<ul id="list">
+</ul>
+</aside>
+
+<aside id="profile">
+    <h4>Profile User</h4>
+    <p>first name:</p>
+    <input type="text" placeholder="type in your first name" class="userDetails">
+
+    <p>last name:</p>
+    <input type="text" placeholder="type in your last name" class="userDetails">
+
+    <p>username:</p>
+    <input type="text" placeholder="create a username!" id="un" class="userDetails">
+    <!-- un stands for username -->
+    <p>date of birth</p>
+    <input type="date">
+    <button type="submit" id="btnSendData">submit</button>
+</aside>
+<footer>
+<p></p>
+<nav class="layout"><a href="/scrabble/main.html" target="_blank">Back to main page?</a></nav>
+<p></p>
+<nav class="layout"><a href="/scrabble/rules/rules.html" target="_blank">Read the rules</a></nav>
+<p></p>
+</footer>
+</body>

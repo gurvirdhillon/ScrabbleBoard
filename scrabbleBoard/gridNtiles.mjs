@@ -3,7 +3,7 @@
 
 
 // drag and drop import.
-import * as draganddrop from './draganddrop.mjs';
+// import * as dragndrop from './draganddrop.mjs';
 import * as letters from './alphabet.mjs';
 // import makeTileLetters as randomGenerator from './alphabet.mjs';
 
@@ -19,56 +19,50 @@ function makeCells(count = 225) {
 }
 makeCells();
 
-const buttonElem = document.querySelector('#nwLtrs');
-buttonElem.addEventListener('click', makeAutoTiles);
+// const buttonElem = document.querySelector('#nwLtrs');
+// buttonElem.addEventListener('click', makeAutoTiles);
 
-// this will create new letters which will be given when the users tile rac is empty.
+// // this will create new letters which will be given when the users tile rac is empty.
+// function getNewLetters() {
+//   document.querySelector('#nwLtrs').addEventListener('click', makeAutoTiles);
+// }
+const buttonElem = document.querySelector('#nwLtrs');
+buttonElem.addEventListener('click', function () {
+  makeAutoTiles('second');
+}, false);
+
 function getNewLetters() {
-  document.querySelector('#nwLtrs').addEventListener('click', makeAutoTiles);
+  document.querySelector('#nwLtrs').addEventListener('click', function () {
+    makeAutoTiles('second');
+  }, false);
 }
+
 getNewLetters();
 
 const tileNumber = 0;
-function makeAutoTiles() {
+let tileNo2 = 8;
+function makeAutoTiles(step) {
   const rackTiles = document.querySelectorAll('#sect1');
+  console.log(rackTiles);
   for (const rackTile of rackTiles) {
-    if (rackTile.children.length < 7) {
-      const divCreator = document.createElement('div');
-      divCreator.classList.add('boardp');
-      tileNumber++;
-      divCreator.id = `letter${tileNumber}`;
+    let defaultCounter = 7;
+    if (step === 'second') {
+      defaultCounter = 100;
+    }
+    if (rackTile.children.length < defaultCounter) {
+      let divCreator = document.createElement('div');
+      divCreator.classList.add('.boardp');
+      // tileNumber++;
+      divCreator.id = `tile${tileNo2}`;
       divCreator.draggable = true;
-      const nodeText = document.createTextNode(letters.makeTileLetters());
-      rackTile.appendChild(nodeText);
+      let nodeText = document.createTextNode(letters.makeTileLetters());
+      divCreator.appendChild(nodeText);
+      rackTile.appendChild(divCreator);
+      tileNo2 = tileNo2 + 1;
     }
   }
-  // for (let i = 0; i < 7; i++) {
-  //   for (const rackTile of rackTiles) {
-  //     if (rackTiles.children === 0) {
-  //       const divCreator = document.createElement('div');
-  //       divCreator.classList.add('boardp');
-  //       divCreator.draggable = true;
-  //       // newLtr++;
-  //       const tileLtr = document.createTextNode(`${i}`);
-  //       tileLtr.appendChild(rackTile);
-  //     }
-  //   }
-  // }
 }
-makeAutoTiles();
-
-// function GenerateTiles() {
-//   const RandomTiles = document.querySelectorAll('.boardp');
-//   for (let i = 0; i < 7; i++) {
-//     for (const RandomTile of RandomTiles) {
-//       const divMaker = document.createElement('div');
-//       divMaker.classList.add('boardp');
-//       divMaker.draggable = true;
-//       const tileLetter = document.textContent(`${i}`);
-//       tileLetter.appendChild(RandomTile);
-//     }
-//   }
-// }
+makeAutoTiles('first');
 
 // naming the tiles
 

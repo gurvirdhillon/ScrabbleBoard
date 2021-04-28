@@ -8,5 +8,4 @@ app.listen(port, function () {
   console.log('server initiates where ', port);
 });
 
-app.use(express.static('/scrabble/rules/rules.html'));
-app.use(express.static('scrabble/functionality/score.html'));
+// the server may take a few moments to run. Please be patient. :)

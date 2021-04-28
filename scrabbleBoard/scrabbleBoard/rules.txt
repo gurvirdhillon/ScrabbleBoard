@@ -1,0 +1,18 @@
+This game is all about words. 
+
+In each tile a letter must be placed which creates a word and a score will be added in order to give its value. 
+
+Each letter has a different value and once a word is formed the score for the word will be calculated by adding each value of the letters. 
+
+In the event of a player placing a word where it causes others to think it is not a real or valid word, the word validator checks if the word is valid!
+
+This game allows between 2 - 4 players. 
+
+
+
+How do i win?
+
+The player with the highest score wins.
+A tally will be taken for each player and at the end of the game the overall score will be formed and the winner will be announced.
+The player starts by getting the tiles and placing letters on the board.
+The board contains random letters which are assigned to the player and this can form many different combinations of words.
